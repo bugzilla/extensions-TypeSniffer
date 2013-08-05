@@ -65,6 +65,7 @@ sub attachment_process_data {
         }
         
         my $mimetype = mimetype($fh);
+        $fh->seek(0, 0);
         if ($mimetype) {
             $attributes->{'mimetype'} = $mimetype;
         }
